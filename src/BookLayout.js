@@ -9,7 +9,7 @@ export function BookLayout() {
       <Link to="/books/2">Book 2</Link>
       <br />
       <Link to="/books/new">New Book</Link>
-      <Outlet context={{ hello: "world" }}/>0
+      <Outlet context={{ hello: "world" }}/>
     </>
   );
 }

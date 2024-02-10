@@ -1,27 +1,27 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { NavLink, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
 import { BookRoutes } from "./BookRoutes";
+import "./styles.css"
 
 function App() {
   return (
     <>
-      {/* <Routes>
-        <Route path="/books" element={<h1>Extra Content</h1>} />
-      </Routes> */}
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/">
+              Home
+            </NavLink>
           </li>
           <li>
-            <Link to="/books">Book</Link>
+            <NavLink end to="/books">Book</NavLink>
           </li>
         </ul>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/books/*" element={<BookRoutes />}>
+        <Route path="/books/*" element={<BookRoutes />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
