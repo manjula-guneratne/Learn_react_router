@@ -1,4 +1,4 @@
-import { Navigate, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useEffect } from "react"
 
 export function NotFound() {
@@ -6,7 +6,7 @@ export function NotFound() {
 
     useEffect(() => {
         setTimeout(() => {
-            navigate("/")
+            navigate("/", { state: "Error Not Found"})
         }, 1000)
     }, [])
 

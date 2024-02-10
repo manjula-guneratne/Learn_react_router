@@ -1,10 +1,11 @@
-import { NavLink, Route, Routes } from "react-router-dom";
+import { NavLink, Route, Routes, useLocation } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
 import { BookRoutes } from "./BookRoutes";
 import "./styles.css"
 
 function App() {
+  const location = useLocation()
   return (
     <>
       <nav>
@@ -19,6 +20,7 @@ function App() {
           </li>
         </ul>
       </nav>
+      {location.state}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/books/*" element={<BookRoutes />} />
